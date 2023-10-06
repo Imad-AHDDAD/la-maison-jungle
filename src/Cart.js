@@ -5,7 +5,7 @@ function Cart(props) {
   return (
     <div className='cart'>
       <h1 className='cart-header'>Panier</h1>
-      <ul className='cart-elements'>
+      <div className='cart-elements'>
         {
           props.elements ?
           <>
@@ -14,6 +14,7 @@ function Cart(props) {
               <th>Designation</th>
               <th>Prix</th>
               <th>Qté</th>
+              <th>Total</th>
             </tr>
             {props.elements.map((element, index) =>
             (
@@ -21,8 +22,8 @@ function Cart(props) {
                 <td>{element.name}</td>
                 <td>{element.price} $</td>
                 <td>{localStorage.getItem(element.id)}</td>
+                <td>{parseFloat(localStorage.getItem(element.id)*element.price).toFixed(2)}</td>
               </tr>
-              // <li key={element.id + index}> ■ {element.name} - {element.price} $</li>
             ))}
           
           </table>
@@ -30,10 +31,10 @@ function Cart(props) {
           :
           <></>
         }
-      </ul>
+      </div>
       {
         localStorage.getItem('total') && props.elements ?
-        (<h2 className="total">Total: {localStorage.getItem('total')} $</h2>)
+        (<h2 className="total">Total: {parseFloat(localStorage.getItem('total')).toFixed(2)} $</h2>)
         :
         (<h2 className="total">Total: 0 $</h2>)
       }
