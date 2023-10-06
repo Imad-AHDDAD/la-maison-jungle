@@ -9,10 +9,23 @@ function Cart(props) {
         {
           props.elements ?
           <>
+          <table>
+            <tr>
+              <th>Designation</th>
+              <th>Prix</th>
+              <th>Qté</th>
+            </tr>
             {props.elements.map((element, index) =>
             (
-              <li key={element.id + index}> ■ {element.name} - {element.price} $</li>
+              <tr key={element.id + index}>
+                <td>{element.name}</td>
+                <td>{element.price} $</td>
+                <td>{localStorage.getItem(element.id)}</td>
+              </tr>
+              // <li key={element.id + index}> ■ {element.name} - {element.price} $</li>
             ))}
+          
+          </table>
           </>
           :
           <></>

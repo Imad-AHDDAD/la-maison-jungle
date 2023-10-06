@@ -4,8 +4,16 @@ function PlantItem(props) {
 
   const handleAddClick = (e) => {
     var cartElements = JSON.parse(localStorage.getItem('cartElements')) || [];
-    cartElements.push(props.produit);
-    localStorage.setItem('cartElements', JSON.stringify(cartElements));
+    if (cartElements.find(e => e.id === props.produit.id)) {
+      console.log(props.produit.name + " exists !");
+      if(localStorage.getItem(props.produit.id)){
+        localStorage.setItem(props.produit.id, Number(localStorage.getItem(props.produit.id)) + 1);
+      }
+    } else {
+      cartElements.push(props.produit);
+      localStorage.setItem('cartElements', JSON.stringify(cartElements));
+      localStorage.setItem(props.produit.id, 1)
+    }
     localStorage.setItem('total', Number(localStorage.getItem('total'))+Number(props.produit.price))
     props.handle();
   }

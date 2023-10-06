@@ -73,6 +73,16 @@
     border-bottom: 2px solid white;
 }
 
+.cart table {
+    width: 100%;
+}
+
+.cart table td {
+    border: 1px solid white;
+    padding: 5px 10px;
+    text-align: left;
+}
+
 .cart .total{
     position: absolute;
     bottom: 20px;

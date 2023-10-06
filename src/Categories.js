@@ -3,9 +3,8 @@ import { plantList } from './planlist'
 
 function Categories(props) {
 
-    const reset = (e) => {
-      localStorage.removeItem('cartElements');
-      localStorage.removeItem('total');
+    const reset = (e) => {                                                  
+      localStorage.clear() 
       props.handleReset();
     }
 
