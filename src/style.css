@@ -34,6 +34,22 @@
     height: 50px;
 }
 
+.connected-user {
+    font-size: 16px;
+    color: white;
+    text-decoration: underline;
+}
+
+.logout-btn {
+    margin-right: 20px;
+    background-color: unset;
+    padding: 5px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+}
+
 .footer {
     width: 100%;
     background-color: burlywood;
@@ -91,6 +107,15 @@
 
 .cart ul li{
     margin-top: 10px;
+}
+
+.command_btn {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: brown;
+    color: white;
+    cursor: pointer;
 }
 
 .right-panel {
